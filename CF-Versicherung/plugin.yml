@@ -1,0 +1,10 @@
+name: CF-Versicherung
+version: 1.0
+author: ChrisOchs
+
+main: me.chrisochs.versicherung.First
+
+commands:
+  versicherung:
+    description: Stammbefehl des Plugins
+    usage: /<command>  

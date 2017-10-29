@@ -1,0 +1,59 @@
+#Liste der Welten, in denen das System aktiv sein soll.
+enabledWorlds:
+- world
+- farmwelt
+- end
+- nether
+#Alle 6 Versicherungen mit deren Einstellungen
+versicherungen:
+  '0':
+    name: nur Rüstung
+    description:
+    - HIER GIBTS KEINE
+    - EIER!
+    price: 0
+    saveXP: false
+    protectedSlots: null
+  '1':
+    name: Lite
+    description:
+    - Alle Items aus deiner
+    - Hotbar werden geschützt
+    price: 270
+    saveXP: false
+    protectedSlots: 8
+  '2':
+    name: Elite
+    description:
+    - Dein gesamtes Inventar
+    - wird geschützt
+    price: 1080
+    saveXP: false
+    protectedSlots: 35
+  '3':
+    name: Exp Saver
+    description:
+    - Deine gesamten Erfahrungs-
+    - punkte werden geschützt
+    price: 405
+    saveXP: true
+    protectedSlots: null
+  '4':
+    name: Extreme
+    description:
+    - Deine Hotbar und deine
+    - gesamten Erfahrungspunkte
+    - werden geschützt
+    price: 585
+    saveXP: true
+    protectedSlots: 8
+  '5':
+    name: Ultra
+    description:
+    - Dein gesamtes Inventar und
+    - deine gesamten Erfahrungs-
+    - punkte werden geschützt
+    price: 2520
+    saveXP: true
+    #Slot 0-35 werden geschützt
+    protectedSlots: 35
