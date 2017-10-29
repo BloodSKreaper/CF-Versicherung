@@ -9,7 +9,7 @@ import org.bukkit.inventory.Inventory;
 import utils.Utils;
 
 public class PlayerDeathEventListener implements Listener{
-	
+	/*
 	public PlayerDeathEventListener(){
 	}
 	
@@ -87,4 +87,5 @@ public class PlayerDeathEventListener implements Listener{
 		}
 		}
 	}
+*/
 }

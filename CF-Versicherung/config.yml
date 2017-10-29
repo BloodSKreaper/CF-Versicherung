@@ -4,6 +4,11 @@ enabledWorlds:
 - farmwelt
 - end
 - nether
+prefix: CF-Versicherungen
+newPlayer:
+  versicherung: 4
+#Zeit in Tagen
+  time: 7
 #Alle 6 Versicherungen mit deren Einstellungen
 versicherungen:
   '0':
@@ -13,7 +18,7 @@ versicherungen:
     - EIER!
     price: 0
     saveXP: false
-    protectedSlots: null
+    protectedSlots: -1
   '1':
     name: Lite
     description:
@@ -37,7 +42,7 @@ versicherungen:
     - punkte werden geschützt
     price: 405
     saveXP: true
-    protectedSlots: null
+    protectedSlots: -1
   '4':
     name: Extreme
     description:

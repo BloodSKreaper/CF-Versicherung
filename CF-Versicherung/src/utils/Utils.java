@@ -1,9 +1,11 @@
 package utils;
 
 import java.util.Calendar;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.UUID;
 
+import me.chrisochs.versicherung.Main;
 import versicherungen.PlayerVersicherung;
 import versicherungen.Versicherung;
 import versicherungen.Versicherungen;
@@ -50,21 +52,32 @@ public class Utils {
 	}
 
 	public static void loadPlayerVersicherung(UUID uuid) {
-		if(versicherungen.get(uuid)!=null){
-		int number = Playerdata.getInt(uuid, "number");
-		String date = Playerdata.getString(uuid, "date");
-		String[] parts = date.split("-");
-		int day = Integer.parseInt(parts[0]);
-		int month = Integer.parseInt(parts[1]);
-		int year = Integer.parseInt(parts[2]);
-		Calendar cal = Calendar.getInstance();
-		cal.set(year, month, day, 23, 59);
+		Versicherung vers;
+		Calendar cal;
+		if(getPlayerVersicherung(uuid)!=null){
+			int number = Playerdata.getInt(uuid, "number");
+			String date = Playerdata.getString(uuid, "date");
+			String[] parts = date.split("-");
+			int day = Integer.parseInt(parts[0]);
+			int month = Integer.parseInt(parts[1]);
+			int year = Integer.parseInt(parts[2]);
+			cal = Calendar.getInstance();
+			cal.set(year, month, day, 23, 59);
+			vers = getVersicherungFromNumber(number);
 		
-		Versicherung vers = getVersicherungFromNumber(number);
-		PlayerVersicherung playervers = new PlayerVersicherung(uuid, vers.getName(), vers.getDescription(), vers.getPrice(), vers.getsaveXP(), vers.getprotectedSlots(), cal);
-		versicherungen.put(uuid, playervers);
+		}else{
+			int number = Main.config.getInt("newPlayer.versicherung");
+			int days = Main.config.getInt("newPlayer.time");
+			cal = Calendar.getInstance();
+			cal.setTime(new Date());
+			cal.add(Calendar.DATE, days);
+			vers = getVersicherungFromNumber(number);
 		}
+		PlayerVersicherung playervers = new PlayerVersicherung(uuid, vers.getName(), vers.getDescription(), vers.getPrice(), vers.getsaveXP(), vers.getprotectedSlots(), cal);
+		setPlayerVersicherung(uuid, playervers);
 	}
+	
+
 
 
 	

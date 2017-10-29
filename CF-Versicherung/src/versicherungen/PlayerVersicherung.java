@@ -8,12 +8,12 @@ import java.util.UUID;
 
 public class PlayerVersicherung extends Versicherung {
 	
-	private Calendar EndofRuntime;
+	private Calendar EndOfRuntime;
 	private UUID uuid;
 	
 	public PlayerVersicherung(UUID uuid, String name, List<String> description, double price, boolean saveXP, int protectedSlots, Calendar date) {
 		super(name, description, price, saveXP, protectedSlots);
-		EndofRuntime = date;
+		EndOfRuntime = date;
 		this.uuid = uuid;
 	}
 	
@@ -22,15 +22,15 @@ public class PlayerVersicherung extends Versicherung {
 	}
 	
 	public Calendar getRuntimeEnd(){
-		return EndofRuntime;
+		return EndOfRuntime;
 	}
 	
 	public String getRuntimeEndAsString(){
-		return new SimpleDateFormat("dd.MM.yyyy").format(EndofRuntime);
+		return new SimpleDateFormat("dd-MM-yyyy").format(EndOfRuntime.getTime());
 	}
 	
 	public boolean hasEnded() {
-		Calendar endcal = EndofRuntime;
+		Calendar endcal = EndOfRuntime;
 		Calendar calnow = Calendar.getInstance();
 		 
 		Date rightnow = calnow.getTime();

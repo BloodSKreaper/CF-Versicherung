@@ -37,7 +37,7 @@ public class VersicherungsMenu{
 		lore.add(Utils.getPlayerVersicherung(p.getUniqueId()).getRuntimeEndAsString());
 		SkullMeta meta = (SkullMeta)istack.getItemMeta();
 		meta.setOwningPlayer(p);
-		meta.setDisplayName("§2Steve's Versicherung");
+		meta.setDisplayName("§2"+p.getName()+"'s Versicherung");
 		meta.setLore(lore);
 		istack.setItemMeta(meta);
 		return istack;
@@ -62,55 +62,55 @@ public class VersicherungsMenu{
 
 		//Versicherung II
 		ItemStack istack5= new ItemStack(Material.PAPER,1);
-		this.setMeta(istack1, Versicherungen.TWO.getVersicherung().getName(), Versicherungen.TWO.getVersicherung().getDescription());
+		this.setMeta(istack5, Versicherungen.TWO.getVersicherung().getName(), Versicherungen.TWO.getVersicherung().getDescription());
 		
 		ItemStack istack6= new ItemStack(Material.INK_SACK,1,(short)4);
-		this.setMeta(istack2, "§2§lEine Woche", getLoreDauer(1, Versicherungen.TWO.getVersicherung().getPrice(), Versicherungen.TWO.getVersicherung().getName()));
+		this.setMeta(istack6, "§2§lEine Woche", getLoreDauer(1, Versicherungen.TWO.getVersicherung().getPrice(), Versicherungen.TWO.getVersicherung().getName()));
 		
 		ItemStack istack7= new ItemStack(Material.DIAMOND,1);
-		setMeta(istack3, "§2§lZwei Wochen", getLoreDauer(2, Versicherungen.TWO.getVersicherung().getPrice(), Versicherungen.TWO.getVersicherung().getName()));
+		setMeta(istack7, "§2§lZwei Wochen", getLoreDauer(2, Versicherungen.TWO.getVersicherung().getPrice(), Versicherungen.TWO.getVersicherung().getName()));
 		
 		ItemStack istack8= new ItemStack(Material.EMERALD,1);
-		setMeta(istack4, "§2§lDrei Wochen", getLoreDauer(3, Versicherungen.TWO.getVersicherung().getPrice(), Versicherungen.TWO.getVersicherung().getName()));
+		setMeta(istack8, "§2§lDrei Wochen", getLoreDauer(3, Versicherungen.TWO.getVersicherung().getPrice(), Versicherungen.TWO.getVersicherung().getName()));
 		
 		//Versicherung III
 		ItemStack istack9= new ItemStack(Material.PAPER,1);
-		this.setMeta(istack1, Versicherungen.THREE.getVersicherung().getName(), Versicherungen.THREE.getVersicherung().getDescription());
+		this.setMeta(istack9, Versicherungen.THREE.getVersicherung().getName(), Versicherungen.THREE.getVersicherung().getDescription());
 		
 		ItemStack istack10= new ItemStack(Material.INK_SACK,1,(short)4);
-		this.setMeta(istack2, "§2§lEine Woche", getLoreDauer(1, Versicherungen.THREE.getVersicherung().getPrice(), Versicherungen.THREE.getVersicherung().getName()));
+		this.setMeta(istack10, "§2§lEine Woche", getLoreDauer(1, Versicherungen.THREE.getVersicherung().getPrice(), Versicherungen.THREE.getVersicherung().getName()));
 		
 		ItemStack istack11= new ItemStack(Material.DIAMOND,1);
-		setMeta(istack3, "§2§lZwei Wochen", getLoreDauer(2, Versicherungen.THREE.getVersicherung().getPrice(), Versicherungen.THREE.getVersicherung().getName()));
+		setMeta(istack11, "§2§lZwei Wochen", getLoreDauer(2, Versicherungen.THREE.getVersicherung().getPrice(), Versicherungen.THREE.getVersicherung().getName()));
 		
 		ItemStack istack12= new ItemStack(Material.EMERALD,1);
-		setMeta(istack4, "§2§lDrei Wochen", getLoreDauer(3, Versicherungen.THREE.getVersicherung().getPrice(), Versicherungen.THREE.getVersicherung().getName()));
+		setMeta(istack12, "§2§lDrei Wochen", getLoreDauer(3, Versicherungen.THREE.getVersicherung().getPrice(), Versicherungen.THREE.getVersicherung().getName()));
 		
 		//Versicherung IV
 		ItemStack istack13= new ItemStack(Material.PAPER,1);
-		this.setMeta(istack1, Versicherungen.FOUR.getVersicherung().getName(), Versicherungen.FOUR.getVersicherung().getDescription());
+		this.setMeta(istack13, Versicherungen.FOUR.getVersicherung().getName(), Versicherungen.FOUR.getVersicherung().getDescription());
 		
 		ItemStack istack14= new ItemStack(Material.INK_SACK,1,(short)4);
-		this.setMeta(istack2, "§2§lEine Woche", getLoreDauer(1, Versicherungen.FOUR.getVersicherung().getPrice(), Versicherungen.FOUR.getVersicherung().getName()));
+		this.setMeta(istack14, "§2§lEine Woche", getLoreDauer(1, Versicherungen.FOUR.getVersicherung().getPrice(), Versicherungen.FOUR.getVersicherung().getName()));
 		
 		ItemStack istack15= new ItemStack(Material.DIAMOND,1);
-		setMeta(istack3, "§2§lZwei Wochen", getLoreDauer(2, Versicherungen.FOUR.getVersicherung().getPrice(), Versicherungen.FOUR.getVersicherung().getName()));
+		setMeta(istack15, "§2§lZwei Wochen", getLoreDauer(2, Versicherungen.FOUR.getVersicherung().getPrice(), Versicherungen.FOUR.getVersicherung().getName()));
 		
 		ItemStack istack16= new ItemStack(Material.EMERALD,1);
-		setMeta(istack4, "§2§lDrei Wochen", getLoreDauer(3, Versicherungen.FOUR.getVersicherung().getPrice(), Versicherungen.FOUR.getVersicherung().getName()));
+		setMeta(istack16, "§2§lDrei Wochen", getLoreDauer(3, Versicherungen.FOUR.getVersicherung().getPrice(), Versicherungen.FOUR.getVersicherung().getName()));
 		
 		//Versicherung V
 		ItemStack istack17= new ItemStack(Material.PAPER,1);
-		this.setMeta(istack1, Versicherungen.FIVE.getVersicherung().getName(), Versicherungen.FIVE.getVersicherung().getDescription());
+		this.setMeta(istack17, Versicherungen.FIVE.getVersicherung().getName(), Versicherungen.FIVE.getVersicherung().getDescription());
 		
 		ItemStack istack18= new ItemStack(Material.INK_SACK,1,(short)4);
-		this.setMeta(istack2, "§2§lEine Woche", getLoreDauer(1, Versicherungen.FIVE.getVersicherung().getPrice(), Versicherungen.FIVE.getVersicherung().getName()));
+		this.setMeta(istack18, "§2§lEine Woche", getLoreDauer(1, Versicherungen.FIVE.getVersicherung().getPrice(), Versicherungen.FIVE.getVersicherung().getName()));
 		
 		ItemStack istack19= new ItemStack(Material.DIAMOND,1);
-		setMeta(istack3, "§2§lZwei Wochen", getLoreDauer(2, Versicherungen.FIVE.getVersicherung().getPrice(), Versicherungen.FIVE.getVersicherung().getName()));
+		setMeta(istack19, "§2§lZwei Wochen", getLoreDauer(2, Versicherungen.FIVE.getVersicherung().getPrice(), Versicherungen.FIVE.getVersicherung().getName()));
 		
 		ItemStack istack20= new ItemStack(Material.EMERALD,1);
-		setMeta(istack4, "§2§lDrei Wochen", getLoreDauer(3, Versicherungen.FIVE.getVersicherung().getPrice(), Versicherungen.FIVE.getVersicherung().getName()));
+		setMeta(istack20, "§2§lDrei Wochen", getLoreDauer(3, Versicherungen.FIVE.getVersicherung().getPrice(), Versicherungen.FIVE.getVersicherung().getName()));
 
 
 		

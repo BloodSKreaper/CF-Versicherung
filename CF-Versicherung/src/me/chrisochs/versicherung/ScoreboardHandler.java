@@ -14,7 +14,7 @@ import org.bukkit.scoreboard.ScoreboardManager;
 import org.bukkit.scoreboard.Team;
 
 public class ScoreboardHandler {
-	private static Plugin plugin;
+	/*private static Plugin plugin;
 	static Map<Player, Scoreboard> scoreboards = new HashMap<Player, Scoreboard>();
 
 	public ScoreboardHandler(Plugin plugin){
@@ -89,5 +89,5 @@ public class ScoreboardHandler {
 	}
 	public static void removeScoreboardPlayer(Player p){
 		scoreboards.remove(p);
-	}
+	}*/
 }

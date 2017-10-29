@@ -2,7 +2,7 @@ name: CF-Versicherung
 version: 1.0
 author: ChrisOchs
 
-main: me.chrisochs.versicherung.First
+main: me.chrisochs.versicherung.Main
 
 commands:
   versicherung:
