@@ -7,8 +7,48 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.entity.PlayerDeathEvent;
 import org.bukkit.inventory.Inventory;
 import utils.Utils;
+import versicherungen.PlayerVersicherung;
 
 public class PlayerDeathEventListener implements Listener{
+	
+	@EventHandler
+	public void onDeath(PlayerDeathEvent e){
+		if(e.getEntity() instanceof Player){
+		Player p = (Player) e.getEntity();	
+		
+		if(Utils.isEnabledWorld(p.getWorld().getName())){
+			
+			PlayerVersicherung vers = Utils.getPlayerVersicherung(p.getUniqueId());
+			boolean savexp = vers.getsaveXP();
+			int slots = vers.getprotectedSlots();
+			e.setKeepLevel(false);
+			e.setKeepInventory(true);
+			Inventory i = p.getInventory();
+			Location l = p.getLocation();
+			
+			//SLOTS ABHANDELN
+			if(slots<0){
+            	l.getWorld().dropItem(l, i.getItem(40));
+                i.setItem(40, null);
+                slots = 0;
+			}
+			for(int slot = slots; slot<35; slot++){
+
+                if(i.getItem(slot) != null){
+                    l.getWorld().dropItem(l, i.getItem(slot));
+                    i.setItem(slot, null);
+                }
+			}
+			
+			//XP ABHANDELN
+			if(savexp){
+				e.setKeepLevel(true);
+				e.setDroppedExp(0);
+			}
+			
+		}
+		}
+	}
 	/*
 	public PlayerDeathEventListener(){
 	}

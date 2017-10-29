@@ -63,26 +63,27 @@ public class Utils {
 	public static void loadPlayerVersicherung(UUID uuid) {
 		Versicherung vers;
 		Calendar cal;
-		if(getPlayerVersicherung(uuid)!=null){
-			int number = Playerdata.getInt(uuid, "number");
+		int number;
+		if(Playerdata.getString(uuid, "number")!=null){
+			number = Playerdata.getInt(uuid, "number");
 			String date = Playerdata.getString(uuid, "date");
 			String[] parts = date.split("-");
 			int day = Integer.parseInt(parts[0]);
-			int month = Integer.parseInt(parts[1]);
+			int month = Integer.parseInt(parts[1])-1;
 			int year = Integer.parseInt(parts[2]);
 			cal = Calendar.getInstance();
 			cal.set(year, month, day, 23, 59);
 			vers = getVersicherungFromNumber(number);
 		
 		}else{
-			int number = Main.config.getInt("newPlayer.versicherung");
+			number = Main.config.getInt("newPlayer.versicherung");
 			int days = Main.config.getInt("newPlayer.time");
 			cal = Calendar.getInstance();
 			cal.setTime(new Date());
 			cal.add(Calendar.DATE, days);
 			vers = getVersicherungFromNumber(number);
 		}
-		PlayerVersicherung playervers = new PlayerVersicherung(uuid, vers.getName(), vers.getDescription(), vers.getPrice(), vers.getsaveXP(), vers.getprotectedSlots(), cal);
+		PlayerVersicherung playervers = new PlayerVersicherung(uuid, number, vers.getName(), vers.getDescription(), vers.getPrice(), vers.getsaveXP(), vers.getprotectedSlots(), cal);
 		setPlayerVersicherung(uuid, playervers);
 	}
 	

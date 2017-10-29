@@ -9,8 +9,10 @@ public class Versicherung {
 	private double price;
 	private List<String> description = new ArrayList<String>();
 	private int protectedSlots;
+	private int number;
 	
-	public Versicherung(String name, List<String> description, double price, boolean saveXP, int protectedSlots){
+	public Versicherung(int number, String name, List<String> description, double price, boolean saveXP, int protectedSlots){
+		this.number = number;
 		this.name = name;
 		this.description = description;
 		this.price = price;
@@ -20,6 +22,10 @@ public class Versicherung {
 	
 	public String getName(){
 		return name;
+	}
+	
+	public int getNumber(){
+		return number;
 	}
 	
 	public List<String> getDescription(){

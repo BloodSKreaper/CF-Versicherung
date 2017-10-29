@@ -8,6 +8,8 @@ import org.bukkit.plugin.java.JavaPlugin;
 import commands.CommandVersicherung;
 import listeners.InventarClickListener;
 import listeners.JoinEventListener;
+import listeners.PlayerDeathEventListener;
+import listeners.PlayerQuitEventListener;
 //import listeners.PlayerDeathEventListener;
 import net.milkbowl.vault.economy.Economy;
 
@@ -26,9 +28,12 @@ public class Main extends JavaPlugin{
 	}
 	public void onEnable(){
 	    System.out.println("[CF-Versicherung] by ChrisOchs");
-	    //getServer().getPluginManager().registerEvents(new PlayerDeathEventListener(), this);
-	    getServer().getPluginManager().registerEvents(new InventarClickListener(this), this);
+	    getServer().getPluginManager().registerEvents(new PlayerDeathEventListener(), this);
+	    
+	    getServer().getPluginManager().registerEvents(new InventarClickListener(), this);
 	    getServer().getPluginManager().registerEvents(new JoinEventListener(this), this);
+	    getServer().getPluginManager().registerEvents(new PlayerQuitEventListener(), this);
+
 	    
 	    this.getCommand("versicherung").setExecutor(new CommandVersicherung());
 	    

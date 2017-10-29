@@ -25,7 +25,7 @@ public enum Versicherungen {
 		Versicherung result = null;
 		if(Main.config.getString(prefix)!= null){
 			try{
-				result = new Versicherung(Main.config.getString(prefix+".name"), Main.config.getStringList(prefix+".description"),
+				result = new Versicherung(i, Main.config.getString(prefix+".name"), Main.config.getStringList(prefix+".description"),
 						Main.config.getDouble(prefix+".price"), Main.config.getBoolean(prefix+".saveXP"), Main.config.getInt(prefix+".protectedSlots"));
 			}catch(Exception ee){
 				ee.printStackTrace();

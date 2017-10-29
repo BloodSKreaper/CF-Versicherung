@@ -11,8 +11,8 @@ public class PlayerVersicherung extends Versicherung {
 	private Calendar EndOfRuntime;
 	private UUID uuid;
 	
-	public PlayerVersicherung(UUID uuid, String name, List<String> description, double price, boolean saveXP, int protectedSlots, Calendar date) {
-		super(name, description, price, saveXP, protectedSlots);
+	public PlayerVersicherung(UUID uuid, int number, String name, List<String> description, double price, boolean saveXP, int protectedSlots, Calendar date) {
+		super(number, name, description, price, saveXP, protectedSlots);
 		EndOfRuntime = date;
 		this.uuid = uuid;
 	}
@@ -29,6 +29,10 @@ public class PlayerVersicherung extends Versicherung {
 		return new SimpleDateFormat("dd.MM.yyyy").format(EndOfRuntime.getTime());
 	}
 	
+	public String getDateForSave(){
+		return new SimpleDateFormat("dd-MM-yyyy").format(EndOfRuntime.getTime());
+	}
+	
 	public boolean hasEnded() {
 		Calendar endcal = EndOfRuntime;
 		Calendar calnow = Calendar.getInstance();
@@ -42,5 +46,6 @@ public class PlayerVersicherung extends Versicherung {
 		  }
 		  return false;
 	}
+	
 
 }

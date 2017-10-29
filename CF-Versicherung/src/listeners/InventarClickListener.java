@@ -1,15 +1,11 @@
 package listeners;
 
-import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
-import java.util.UUID;
-
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.InventoryClickEvent;
-import org.bukkit.plugin.Plugin;
 
 import me.chrisochs.versicherung.Main;
 import net.milkbowl.vault.economy.EconomyResponse;
@@ -19,11 +15,9 @@ import versicherungen.Versicherung;
 import versicherungen.Versicherungen;
 
 public class InventarClickListener implements Listener{
-	private Plugin plugin;
 
 	
-	public InventarClickListener(Plugin plugin) {
-		this.plugin=plugin;
+	public InventarClickListener() {
 	}
 
 	@EventHandler
@@ -112,7 +106,7 @@ public class InventarClickListener implements Listener{
 				  int days = 7*faktor;
 				  cal.setTime(now);
 				  cal.add(Calendar.DATE, days);
-				  Utils.setPlayerVersicherung(player.getUniqueId(), new PlayerVersicherung(player.getUniqueId(), vers.getName(), vers.getDescription(), vers.getPrice(), vers.getsaveXP(), vers.getprotectedSlots(), cal));
+				  Utils.setPlayerVersicherung(player.getUniqueId(), new PlayerVersicherung(player.getUniqueId(),vers.getNumber(), vers.getName(), vers.getDescription(), vers.getPrice(), vers.getsaveXP(), vers.getprotectedSlots(), cal));
 		    	player.closeInventory();
 		    	player.sendMessage(Main.prefix);
 		    	player.sendMessage("§aDu hast die Versicherung §6"+vers.getName()+" §afür §6"+days+" Tage §aabgeschlossen!");
