@@ -21,7 +21,7 @@ public class CommandVersicherung implements CommandExecutor{
 		}
 		
 		
-		return false;
+		return true;
 	}
 
 }
