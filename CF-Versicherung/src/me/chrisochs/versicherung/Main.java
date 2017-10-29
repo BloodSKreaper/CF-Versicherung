@@ -33,7 +33,7 @@ public class Main extends JavaPlugin{
 	    this.getCommand("versicherung").setExecutor(new CommandVersicherung());
 	    
 	    new VersicherungsMenu(this);
-	    //new ScoreboardHandler(this);
+	    new ScoreboardHandler(this);
 	    
 	    this.setupEconomy();
 	    prefix = config.getString("prefix");

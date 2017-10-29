@@ -1,7 +1,9 @@
 package me.chrisochs.versicherung;
 
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.UUID;
 
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
@@ -13,13 +15,13 @@ import org.bukkit.scoreboard.Scoreboard;
 import org.bukkit.scoreboard.ScoreboardManager;
 import org.bukkit.scoreboard.Team;
 
-public class ScoreboardHandler {
-	/*private static Plugin plugin;
-	static Map<Player, Scoreboard> scoreboards = new HashMap<Player, Scoreboard>();
+import utils.Utils;
 
+public class ScoreboardHandler {
+	static Map<UUID, Scoreboard> scoreboards = new HashMap<UUID, Scoreboard>();
+	Plugin pl;
 	public ScoreboardHandler(Plugin plugin){
-		ScoreboardHandler.plugin = plugin;
-		
+		pl = plugin;
 
 		this.startSheduler();
 	}
@@ -30,54 +32,71 @@ public class ScoreboardHandler {
 		Objective pscore = board.registerNewObjective("Infos", "dummy");
 		pscore.setDisplayName("§6Mein Account:");
 		pscore.setDisplaySlot(DisplaySlot.SIDEBAR);
-		String vs = "§6";
-		String cubs = "\u00A2";
+		
 		Score versicherung = pscore.getScore("§6Versicherung:");
-		pscore.getScore(vs).setScore(3);
+		versicherung.setScore(7);
+		
+		String vs = "§6";
 		Team sversicherung = board.registerNewTeam("sversicherung");
-		pscore.getScore(cubs).setScore(1);
-		Team smoney = board.registerNewTeam("money");
 		sversicherung.addEntry(vs);
+		sversicherung.setSuffix("§b"+Utils.getPlayerVersicherung(p.getUniqueId()).getName());
+		pscore.getScore(vs).setScore(6);
+		
+		Score runtimeend = pscore.getScore("§6Ablaufdatum:");
+		runtimeend.setScore(5);
+		
+		String datediff = "§2";
+		pscore.getScore(datediff).setScore(4);
+		Team playerdays = board.registerNewTeam("playerdays");
+		playerdays.addEntry(datediff);
+		playerdays.setSuffix("§b"+Utils.getPlayerVersicherung(p.getUniqueId()).getRuntimeEndAsString());
+
+		Score filler = pscore.getScore("§5");
+		filler.setScore(3);
+		
+
+		String cubs = "\u00A2";
+		Team smoney = board.registerNewTeam("money");
 		smoney.addEntry(cubs);
-		sversicherung.setSuffix("§b"+versicherungsname(p));
 		double money = ((double)((int)(me.chrisochs.versicherung.Main.econ.getBalance(p)*100))) / 100;
 		smoney.setPrefix("§b"+money);
+		pscore.getScore(cubs).setScore(1);
+		
+		
+
+
+
+		
+		
+
 		Score Geld = pscore.getScore("§6Vermögen:");
-		versicherung.setScore(4);
 		Geld.setScore(2);
 		p.setScoreboard(board);
-		scoreboards.put(p, board);
-
-
+		scoreboards.put(p.getUniqueId(), board);
 	}
 	
 	
-	public static String versicherungsname(Player p){
-		int Versicherung = plugin.getConfig().getInt("spieler."+p.getUniqueId()+".versicherung");
-		String name = plugin.getConfig().getString("versicherungen."+Versicherung+".name");
-		return name;
-	}
 	public void updateScoreboard(Player p){
-		Scoreboard board = scoreboards.get(p);
+		Scoreboard board = scoreboards.get(p.getUniqueId());
 		Team sversicherung = board.getTeam("sversicherung");
-		sversicherung.setSuffix("§b"+versicherungsname(p));
-		Team smoney = board.getTeam("money");
-		double money = ((double)((int)(me.chrisochs.versicherung.Main.econ.getBalance(p)*100))) / 100;
-		smoney.setPrefix("§b"+money);
+		sversicherung.setSuffix("§b"+Utils.getPlayerVersicherung(p.getUniqueId()).getName());
+		
+		Team smoney = board.getTeam("money");		
+		smoney.setPrefix("§b"+me.chrisochs.versicherung.Main.econ.getBalance(p)*100/ 100);
+		
+		Team playerdays = board.getTeam("playerdays");
+		playerdays.setSuffix("§b"+Utils.getPlayerVersicherung(p.getUniqueId()).getRuntimeEndAsString());
 		p.setScoreboard(board);
-		scoreboards.put(p, board);
+		scoreboards.put(p.getUniqueId(), board);
 	}
 	@SuppressWarnings("deprecation")
 	public void startSheduler(){
 		
-	plugin.getServer().getScheduler().scheduleAsyncRepeatingTask(plugin, new Runnable() {
+	pl.getServer().getScheduler().scheduleAsyncRepeatingTask(pl, new Runnable() {
 
 		public void run() {
 		for(Player player: Bukkit.getServer().getOnlinePlayers()){
-			if(player.getWorld().getName().equalsIgnoreCase("Event")||player.getWorld().getName().equalsIgnoreCase("bedwars")){
-			}else{
-				
-			
+			if(scoreboards.containsKey(player.getUniqueId())&&Utils.isEnabledWorld(player.getWorld().getName())){	
 			updateScoreboard(player);
 			}
 		}
@@ -89,5 +108,5 @@ public class ScoreboardHandler {
 	}
 	public static void removeScoreboardPlayer(Player p){
 		scoreboards.remove(p);
-	}*/
+	}
 }

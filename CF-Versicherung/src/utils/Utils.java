@@ -50,6 +50,15 @@ public class Utils {
 		}
 		return vers;
 	}
+	
+	public static boolean isEnabledWorld(String worldname){
+		boolean result = false;
+		for(String name: Main.config.getStringList("enabledWorlds")){
+			if(name.equalsIgnoreCase(worldname)) result = true;
+		}
+		return result;
+	}
+	
 
 	public static void loadPlayerVersicherung(UUID uuid) {
 		Versicherung vers;

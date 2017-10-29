@@ -26,7 +26,7 @@ public class PlayerVersicherung extends Versicherung {
 	}
 	
 	public String getRuntimeEndAsString(){
-		return new SimpleDateFormat("dd-MM-yyyy").format(EndOfRuntime.getTime());
+		return new SimpleDateFormat("dd.MM.yyyy").format(EndOfRuntime.getTime());
 	}
 	
 	public boolean hasEnded() {

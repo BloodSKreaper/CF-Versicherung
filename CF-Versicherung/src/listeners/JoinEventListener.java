@@ -6,6 +6,7 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.plugin.Plugin;
 
+import me.chrisochs.versicherung.ScoreboardHandler;
 import utils.Utils;
 
 
@@ -24,6 +25,7 @@ public class JoinEventListener implements Listener{
 			@Override
 			public void run() {
 				Utils.loadPlayerVersicherung(event.getPlayer().getUniqueId());
+				ScoreboardHandler.setUpScoreboard(event.getPlayer());
 				
 			}
 			
