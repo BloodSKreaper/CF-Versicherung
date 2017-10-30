@@ -58,7 +58,7 @@ public class ScoreboardHandler {
 		String cubs = "\u00A2";
 		Team smoney = board.registerNewTeam("money");
 		smoney.addEntry(cubs);
-		DecimalFormat f = new DecimalFormat("#0.00"); 
+		DecimalFormat f = new DecimalFormat("#0,00"); 
 		double balance = Main.econ.getBalance(p);
 		String money = f.format(balance);
 		smoney.setPrefix("§b"+money);
@@ -84,7 +84,7 @@ public class ScoreboardHandler {
 		sversicherung.setSuffix("§b"+Utils.getPlayerVersicherung(p.getUniqueId()).getName());
 		
 		Team smoney = board.getTeam("money");		
-		DecimalFormat f = new DecimalFormat("#0.00"); 
+		DecimalFormat f = new DecimalFormat("#0,00"); 
 		double balance = Main.econ.getBalance(p);
 		String money = f.format(balance);
 		smoney.setPrefix("§b"+money);
