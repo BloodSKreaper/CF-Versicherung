@@ -1,6 +1,6 @@
 package me.chrisochs.versicherung;
 
-import java.util.Date;
+import java.text.DecimalFormat;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
@@ -58,7 +58,9 @@ public class ScoreboardHandler {
 		String cubs = "\u00A2";
 		Team smoney = board.registerNewTeam("money");
 		smoney.addEntry(cubs);
-		double money = ((double)((int)(me.chrisochs.versicherung.Main.econ.getBalance(p)*100))) / 100;
+		DecimalFormat f = new DecimalFormat("#0.00"); 
+		double balance = Main.econ.getBalance(p);
+		String money = f.format(balance);
 		smoney.setPrefix("§b"+money);
 		pscore.getScore(cubs).setScore(1);
 		
@@ -82,7 +84,10 @@ public class ScoreboardHandler {
 		sversicherung.setSuffix("§b"+Utils.getPlayerVersicherung(p.getUniqueId()).getName());
 		
 		Team smoney = board.getTeam("money");		
-		smoney.setPrefix("§b"+me.chrisochs.versicherung.Main.econ.getBalance(p)*100/ 100);
+		DecimalFormat f = new DecimalFormat("#0.00"); 
+		double balance = Main.econ.getBalance(p);
+		String money = f.format(balance);
+		smoney.setPrefix("§b"+money);
 		
 		Team playerdays = board.getTeam("playerdays");
 		playerdays.setSuffix("§b"+Utils.getPlayerVersicherung(p.getUniqueId()).getRuntimeEndAsString());
