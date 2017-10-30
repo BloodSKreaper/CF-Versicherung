@@ -13,7 +13,7 @@ import org.bukkit.inventory.meta.SkullMeta;
 import org.bukkit.plugin.Plugin;
 
 import me.chrisochs.versicherung.utils.Utils;
-import versicherungen.Versicherungen;
+import me.chrisochs.versicherung.versicherungen.Versicherungen;
 
 public class VersicherungsMenu{
 

@@ -5,11 +5,11 @@ import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.plugin.RegisteredServiceProvider;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import commands.CommandVersicherung;
-import listeners.InventarClickListener;
-import listeners.JoinEventListener;
-import listeners.PlayerDeathEventListener;
-import listeners.PlayerQuitEventListener;
+import me.chrisochs.versicherung.commands.CommandVersicherung;
+import me.chrisochs.versicherung.listeners.InventarClickListener;
+import me.chrisochs.versicherung.listeners.JoinEventListener;
+import me.chrisochs.versicherung.listeners.PlayerDeathEventListener;
+import me.chrisochs.versicherung.listeners.PlayerQuitEventListener;
 //import listeners.PlayerDeathEventListener;
 import net.milkbowl.vault.economy.Economy;
 

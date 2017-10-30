@@ -1,4 +1,4 @@
-package versicherungen;
+package me.chrisochs.versicherung.versicherungen;
 
 import java.util.ArrayList;
 import java.util.List;

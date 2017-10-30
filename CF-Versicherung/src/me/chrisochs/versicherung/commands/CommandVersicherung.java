@@ -1,4 +1,4 @@
-package commands;
+package me.chrisochs.versicherung.commands;
 
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;

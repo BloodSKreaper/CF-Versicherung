@@ -1,4 +1,4 @@
-package listeners;
+package me.chrisochs.versicherung.listeners;
 
 import java.util.Calendar;
 import java.util.Date;
@@ -13,9 +13,9 @@ import org.bukkit.plugin.Plugin;
 import me.chrisochs.versicherung.Main;
 import me.chrisochs.versicherung.ScoreboardHandler;
 import me.chrisochs.versicherung.utils.Utils;
-import versicherungen.PlayerVersicherung;
-import versicherungen.Versicherung;
-import versicherungen.Versicherungen;
+import me.chrisochs.versicherung.versicherungen.PlayerVersicherung;
+import me.chrisochs.versicherung.versicherungen.Versicherung;
+import me.chrisochs.versicherung.versicherungen.Versicherungen;
 
 
 

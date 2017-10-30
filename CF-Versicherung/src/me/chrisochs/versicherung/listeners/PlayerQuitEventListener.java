@@ -1,4 +1,4 @@
-package listeners;
+package me.chrisochs.versicherung.listeners;
 
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;

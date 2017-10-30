@@ -6,9 +6,9 @@ import java.util.HashMap;
 import java.util.UUID;
 
 import me.chrisochs.versicherung.Main;
-import versicherungen.PlayerVersicherung;
-import versicherungen.Versicherung;
-import versicherungen.Versicherungen;
+import me.chrisochs.versicherung.versicherungen.PlayerVersicherung;
+import me.chrisochs.versicherung.versicherungen.Versicherung;
+import me.chrisochs.versicherung.versicherungen.Versicherungen;
 
 public class Utils {
 

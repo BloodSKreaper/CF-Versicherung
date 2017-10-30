@@ -1,4 +1,4 @@
-package listeners;
+package me.chrisochs.versicherung.listeners;
 
 import org.bukkit.Location;
 import org.bukkit.entity.Player;
@@ -8,7 +8,7 @@ import org.bukkit.event.entity.PlayerDeathEvent;
 import org.bukkit.inventory.Inventory;
 
 import me.chrisochs.versicherung.utils.Utils;
-import versicherungen.PlayerVersicherung;
+import me.chrisochs.versicherung.versicherungen.PlayerVersicherung;
 
 public class PlayerDeathEventListener implements Listener{
 	

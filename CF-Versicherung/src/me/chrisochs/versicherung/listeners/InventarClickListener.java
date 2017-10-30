@@ -1,4 +1,4 @@
-package listeners;
+package me.chrisochs.versicherung.listeners;
 
 import java.util.Calendar;
 import java.util.Date;
@@ -9,10 +9,10 @@ import org.bukkit.event.inventory.InventoryClickEvent;
 
 import me.chrisochs.versicherung.Main;
 import me.chrisochs.versicherung.utils.Utils;
+import me.chrisochs.versicherung.versicherungen.PlayerVersicherung;
+import me.chrisochs.versicherung.versicherungen.Versicherung;
+import me.chrisochs.versicherung.versicherungen.Versicherungen;
 import net.milkbowl.vault.economy.EconomyResponse;
-import versicherungen.PlayerVersicherung;
-import versicherungen.Versicherung;
-import versicherungen.Versicherungen;
 
 public class InventarClickListener implements Listener{
 

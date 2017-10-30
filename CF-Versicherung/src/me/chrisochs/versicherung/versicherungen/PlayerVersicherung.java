@@ -1,4 +1,4 @@
-package versicherungen;
+package me.chrisochs.versicherung.versicherungen;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
