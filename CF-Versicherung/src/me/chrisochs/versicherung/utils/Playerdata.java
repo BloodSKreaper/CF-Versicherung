@@ -1,4 +1,4 @@
-package utils;
+package me.chrisochs.versicherung.utils;
 
 import java.util.List;
 import java.util.UUID;

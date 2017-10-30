@@ -15,7 +15,7 @@ import org.bukkit.scoreboard.Scoreboard;
 import org.bukkit.scoreboard.ScoreboardManager;
 import org.bukkit.scoreboard.Team;
 
-import utils.Utils;
+import me.chrisochs.versicherung.utils.Utils;
 
 public class ScoreboardHandler {
 	static Map<UUID, Scoreboard> scoreboards = new HashMap<UUID, Scoreboard>();

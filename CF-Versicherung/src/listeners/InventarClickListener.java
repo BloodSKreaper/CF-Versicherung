@@ -8,8 +8,8 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.InventoryClickEvent;
 
 import me.chrisochs.versicherung.Main;
+import me.chrisochs.versicherung.utils.Utils;
 import net.milkbowl.vault.economy.EconomyResponse;
-import utils.Utils;
 import versicherungen.PlayerVersicherung;
 import versicherungen.Versicherung;
 import versicherungen.Versicherungen;

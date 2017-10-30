@@ -12,7 +12,7 @@ import org.bukkit.plugin.Plugin;
 
 import me.chrisochs.versicherung.Main;
 import me.chrisochs.versicherung.ScoreboardHandler;
-import utils.Utils;
+import me.chrisochs.versicherung.utils.Utils;
 import versicherungen.PlayerVersicherung;
 import versicherungen.Versicherung;
 import versicherungen.Versicherungen;

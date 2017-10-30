@@ -5,8 +5,8 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerQuitEvent;
 
 import me.chrisochs.versicherung.ScoreboardHandler;
-import utils.Playerdata;
-import utils.Utils;
+import me.chrisochs.versicherung.utils.Playerdata;
+import me.chrisochs.versicherung.utils.Utils;
 
 public class PlayerQuitEventListener implements Listener{
 /* Beim Leaven des Spielers soll die Versicherung gespeichert werden. 

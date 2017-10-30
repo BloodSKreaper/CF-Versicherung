@@ -6,7 +6,8 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.PlayerDeathEvent;
 import org.bukkit.inventory.Inventory;
-import utils.Utils;
+
+import me.chrisochs.versicherung.utils.Utils;
 import versicherungen.PlayerVersicherung;
 
 public class PlayerDeathEventListener implements Listener{

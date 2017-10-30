@@ -1,4 +1,4 @@
-package utils;
+package me.chrisochs.versicherung.utils;
 
 import java.util.Calendar;
 import java.util.Date;
