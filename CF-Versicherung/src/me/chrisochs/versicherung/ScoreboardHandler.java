@@ -58,10 +58,8 @@ public class ScoreboardHandler {
 		String cubs = "\u00A2";
 		Team smoney = board.registerNewTeam("money");
 		smoney.addEntry(cubs);
-		DecimalFormat f = new DecimalFormat("#0,00"); 
-		double balance = Main.econ.getBalance(p);
-		String money = f.format(balance);
-		smoney.setPrefix("§b"+money);
+		double balance = Math.round(Main.econ.getBalance(p) * 100.0D) / 100.0D;
+		smoney.setPrefix("§b"+balance);
 		pscore.getScore(cubs).setScore(1);
 		
 		
