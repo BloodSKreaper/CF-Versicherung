@@ -29,9 +29,11 @@ public class PlayerDeathEventListener implements Listener{
 			
 			//SLOTS ABHANDELN
 			if(slots<0){
+				if(i.getItem(40) != null){
             	l.getWorld().dropItem(l, i.getItem(40));
                 i.setItem(40, null);
                 slots = 0;
+				}
 			}
 			for(int slot = slots; slot<35; slot++){
 

@@ -1,6 +1,6 @@
 package me.chrisochs.versicherung;
 
-import java.text.DecimalFormat;
+import java.text.NumberFormat;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
@@ -58,8 +58,7 @@ public class ScoreboardHandler {
 		String cubs = "\u00A2";
 		Team smoney = board.registerNewTeam("money");
 		smoney.addEntry(cubs);
-		double balance = Math.round(Main.econ.getBalance(p) * 100.0D) / 100.0D;
-		smoney.setPrefix("§b"+balance);
+		smoney.setPrefix("§b"+roundDoubleTwoDezimal(Main.econ.getBalance(p)));
 		pscore.getScore(cubs).setScore(1);
 		
 		
@@ -76,16 +75,14 @@ public class ScoreboardHandler {
 	}
 	
 	
+	
 	public void updateScoreboard(Player p){
 		Scoreboard board = scoreboards.get(p.getUniqueId());
 		Team sversicherung = board.getTeam("sversicherung");
 		sversicherung.setSuffix("§b"+Utils.getPlayerVersicherung(p.getUniqueId()).getName());
 		
-		Team smoney = board.getTeam("money");		
-		DecimalFormat f = new DecimalFormat("#0,00"); 
-		double balance = Main.econ.getBalance(p);
-		String money = f.format(balance);
-		smoney.setPrefix("§b"+money);
+		Team smoney = board.getTeam("money");
+		smoney.setPrefix("§b"+roundDoubleTwoDezimal(Main.econ.getBalance(p)));
 		
 		Team playerdays = board.getTeam("playerdays");
 		playerdays.setSuffix("§b"+Utils.getPlayerVersicherung(p.getUniqueId()).getRuntimeEndAsString());
@@ -111,5 +108,13 @@ public class ScoreboardHandler {
 	}
 	public static void removeScoreboardPlayer(Player p){
 		scoreboards.remove(p);
+	}
+	
+	public static String roundDoubleTwoDezimal(double d){
+		NumberFormat n = NumberFormat.getInstance();
+		n.setMaximumFractionDigits(2);
+		String rounded = n.format(d);
+		return rounded;
+		
 	}
 }
