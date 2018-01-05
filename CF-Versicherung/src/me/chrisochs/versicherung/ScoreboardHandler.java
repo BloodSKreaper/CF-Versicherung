@@ -56,7 +56,12 @@ public class ScoreboardHandler {
 		
 
 		String cubs = "\u00A2";
-		Team smoney = board.registerNewTeam("money");
+		Team smoney;
+		if(board.getTeam("money")== null){
+		smoney = board.registerNewTeam("money");
+		}else{
+	    smoney = board.getTeam("money");
+		}
 		smoney.addEntry(cubs);
 		smoney.setPrefix("§b"+roundDoubleTwoDezimal(Main.econ.getBalance(p)));
 		pscore.getScore(cubs).setScore(1);
@@ -107,13 +112,14 @@ public class ScoreboardHandler {
 	
 	}
 	public static void removeScoreboardPlayer(Player p){
-		scoreboards.remove(p);
+		scoreboards.remove(p.getUniqueId());
 	}
 	
 	public static String roundDoubleTwoDezimal(double d){
 		NumberFormat n = NumberFormat.getInstance();
 		n.setMaximumFractionDigits(2);
 		String rounded = n.format(d);
+		rounded.replaceAll(".", "#");
 		return rounded;
 		
 	}
