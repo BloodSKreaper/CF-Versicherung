@@ -34,9 +34,8 @@ public class PlayerDeathEventListener implements Listener{
                 i.setItem(40, null);
 				}
 
-                slots = 0;
 			}
-			for(int slot = slots; slot<35; slot++){
+			for(int slot = slots+1; slot<=35; slot++){
 
                 if(i.getItem(slot) != null){
                     l.getWorld().dropItem(l, i.getItem(slot));
